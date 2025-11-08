@@ -1,14 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1314114553641120"
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1314114553641120"
      crossorigin="anonymous"></script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>MCQ Checker</title>
   <style>
     body {
-      font-family: Arial, Helvetica, sans-serif;
+      font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
       margin: 0;
       padding: 0;
       background-color: #f9f9f9;
@@ -35,11 +35,12 @@
       background: #fff;
       border-radius: 8px;
       box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+      position: relative;
     }
 
     h2 {
       color: #2c3e50;
-      margin-top: 30px;
+      margin-top: 20px;
     }
 
     a {
@@ -58,52 +59,160 @@
       font-size: 0.9em;
       color: #777;
     }
+
+    /* Tabs styling */
+    .tabs {
+      display: flex;
+      justify-content: space-around;
+      background: #2c3e50;
+      padding: 12px 0;
+    }
+    .tab-button {
+      padding: 10px 20px;
+      border: none;
+      background: #ecf0f1;
+      cursor: pointer;
+      border-radius: 6px;
+      font-weight: 600;
+      font-family: inherit;
+      color: #2c3e50;
+      transition: all 0.3s ease;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    }
+    .tab-button.active {
+      background: #2980b9;
+      color: #fff;
+      box-shadow: 0 3px 6px rgba(0,0,0,0.2);
+    }
+    .tab-button:hover {
+      background: #dfe6e9;
+      transform: translateY(-2px);
+    }
+
+    /* Tab content fade effect */
+    .tab-content {
+      opacity: 0;
+      visibility: hidden;
+      transition: opacity 0.6s ease;
+      position: absolute;
+      width: 100%;
+    }
+    .tab-content.active {
+      opacity: 1;
+      visibility: visible;
+      position: relative;
+    }
   </style>
 </head>
 <body>
+
+  <!-- Tabs at very top -->
+  <div class="tabs">
+    <button class="tab-button active" onclick="openTab('home')">Home</button>
+    <button class="tab-button" onclick="openTab('about')">About</button>
+    <button class="tab-button" onclick="openTab('features')">Features</button>
+    <button class="tab-button" onclick="openTab('privacy')">Privacy Policy</button>
+    <button class="tab-button" onclick="openTab('contact')">Contact</button>
+  </div>
+
   <header>
     <h1>MCQ Checker</h1>
   </header>
 
   <main>
-    <p>
-      MCQ Checker helps students practice multiple-choice questions aligned with Cambridge examination patterns.<br>
-      This app is independently developed and is not affiliated with or endorsed by Cambridge Assessment International Education.<br>
-      Ads are shown to support development.
-    </p>
+    <!-- Home tab -->
+    <div id="home" class="tab-content active">
+      <p>
+        MCQ Checker helps students practice multiple-choice questions aligned with Cambridge examination patterns.<br>
+        This app is independently developed and is not affiliated with or endorsed by Cambridge Assessment International Education.<br>
+        Ads are shown to support development.
+      </p>
+    </div>
 
-    <h2>Privacy Policy</h2>
-    <p>
-      We do not collect personal data directly. Third-party advertisers may use cookies to personalize content and measure performance.
-      Users can manage cookie preferences through their browser settings.
-    </p>
+    <!-- About tab -->
+    <div id="about" class="tab-content">
+      <h2>About This App</h2>
+      <p>
+        This app is designed to help students practice and review multiple‑choice questions
+        in a clear, reliable, and easy‑to‑use environment. By combining a simple interface
+        with smart features like answer tracking and redo flows, it makes exam preparation
+        more efficient and less stressful.
+      </p>
+      <p>
+        Our focus is on accessibility and trust. The app runs smoothly across platforms
+        without requiring complex setup, and every detail — from the layout to the
+        micro‑interactions — is built to feel polished and professional.
+      </p>
+      <p>
+        Please note: this app is an independent educational tool. It is not affiliated with,
+        endorsed by, or connected to Cambridge Assessment or any official exam board.
+        All content is provided for practice and learning purposes only.
+      </p>
+    </div>
 
-    <h2>Contact</h2>
-    <p>
-      For questions or support, please email: 
-      <a href="mailto:mcqhelpdesk@gmail.com">mcqhelpdesk@gmail.com</a>
-    </p>
+    <!-- Features tab -->
+    <div id="features" class="tab-content">
+  <h2>Features</h2>
+  <ul style="list-style-type: disc; padding-left: 20px;">
+    <li><strong>Answer Tracking:</strong> Review which questions you got right or wrong at a glance.</li>
+    <li><strong>Redo Flow:</strong> Retry incorrect answers to reinforce learning.</li>
+    <li><strong>Clean Interface:</strong> Simple design that keeps the focus on practice, not complexity.</li>
+    <li><strong>Version Updates:</strong> Always up‑to‑date with the latest improvements and refinements.</li>
+  </ul>
+</div>
+
+    <!-- Privacy tab -->
+    <div id="privacy" class="tab-content">
+      <h2>Privacy Policy</h2>
+      <p>
+        We do not collect personal data directly. Third-party advertisers may use cookies to personalize content and measure performance.
+        Users can manage cookie preferences through their browser settings.
+      </p>
+    </div>
+
+    <!-- Contact tab -->
+    <div id="contact" class="tab-content">
+      <h2>Contact</h2>
+      <p>
+        For questions or support, please email:
+        <a href="mailto:mcqhelpdesk@gmail.com">mcqhelpdesk@gmail.com</a>
+      </p>
+    </div>
   </main>
-<section id="about" style="max-width:800px; margin:40px auto; font-family:sans-serif; line-height:1.6;">
-  <h2>About This App</h2>
-  <p>
-    This app is designed to help students practice and review multiple‑choice questions 
-    in a clear, reliable, and easy‑to‑use environment. By combining a simple interface 
-    with smart features like answer tracking and redo flows, it makes exam preparation 
-    more efficient and less stressful.
-  </p>
-  <p>
-    Our focus is on accessibility and trust. The app runs smoothly across platforms 
-    without requiring complex setup, and every detail — from the layout to the 
-    micro‑interactions — is built to feel polished and professional.
-  </p>
-  <p>
-    Please note: this app is an independent educational tool. It is not affiliated with, 
-    endorsed by, or connected to Cambridge Assessment or any official exam board. 
-    All content is provided for practice and learning purposes only.
-  </p>
-<footer>
+
+  <footer>
     &copy; 2025 MCQ Checker. All rights reserved.
   </footer>
-</section>
 
+  <script>
+    function openTab(tabId) {
+      const current = document.querySelector('.tab-content.active');
+      const next = document.getElementById(tabId);
+
+      if (current === next) return; // do nothing if same tab clicked
+
+      // Fade out current
+      if (current) {
+        current.style.opacity = 0;
+        setTimeout(() => {
+          current.classList.remove('active');
+          // Fade in next
+          next.classList.add('active');
+          next.style.opacity = 0; // start invisible
+          setTimeout(() => {
+            next.style.opacity = 1;
+          }, 50);
+        }, 600); // match CSS transition duration
+      } else {
+        // If no current, just show next
+        next.classList.add('active');
+        next.style.opacity = 1;
+      }
+
+      // Update button states
+      document.querySelectorAll('.tab-button').forEach(el => el.classList.remove('active'));
+      event.currentTarget.classList.add('active');
+    }
+  </script>
+</body>
+</html>
