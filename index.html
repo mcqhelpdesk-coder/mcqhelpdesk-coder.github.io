@@ -102,6 +102,27 @@
       visibility: visible;
       position: relative;
     }
+
+    /* Download button styling */
+    .download-btn {
+      display: inline-block;
+      background-color: #0078D7; /* Windows blue */
+      color: white;
+      padding: 12px 20px;
+      border-radius: 6px;
+      font-size: 16px;
+      text-decoration: none;
+      font-weight: bold;
+      transition: background-color 0.3s ease;
+    }
+    .download-btn:hover {
+      background-color: #005a9e;
+    }
+    .download-btn img {
+      height: 24px;
+      vertical-align: middle;
+      margin-right: 8px;
+    }
   </style>
 </head>
 <body>
@@ -113,6 +134,7 @@
     <button class="tab-button" onclick="openTab('features')">Features</button>
     <button class="tab-button" onclick="openTab('privacy')">Privacy Policy</button>
     <button class="tab-button" onclick="openTab('contact')">Contact</button>
+    <button class="tab-button" onclick="openTab('download')">Download for Windows</button>
   </div>
 
   <header>
@@ -152,14 +174,14 @@
 
     <!-- Features tab -->
     <div id="features" class="tab-content">
-  <h2>Features</h2>
-  <ul style="list-style-type: disc; padding-left: 20px;">
-    <li><strong>Answer Tracking:</strong> Review which questions you got right or wrong at a glance.</li>
-    <li><strong>Redo Flow:</strong> Retry incorrect answers to reinforce learning.</li>
-    <li><strong>Clean Interface:</strong> Simple design that keeps the focus on practice, not complexity.</li>
-    <li><strong>Version Updates:</strong> Always up‑to‑date with the latest improvements and refinements.</li>
-  </ul>
-</div>
+      <h2>Features</h2>
+      <ul style="list-style-type: disc; padding-left: 20px;">
+        <li><strong>Answer Tracking:</strong> Review which questions you got right or wrong at a glance.</li>
+        <li><strong>Redo Flow:</strong> Retry incorrect answers to reinforce learning.</li>
+        <li><strong>Clean Interface:</strong> Simple design that keeps the focus on practice, not complexity.</li>
+        <li><strong>Version Updates:</strong> Always up‑to‑date with the latest improvements and refinements.</li>
+      </ul>
+    </div>
 
     <!-- Privacy tab -->
     <div id="privacy" class="tab-content">
@@ -177,6 +199,16 @@
         For questions or support, please email:
         <a href="mailto:mcqhelpdesk@gmail.com">mcqhelpdesk@gmail.com</a>
       </p>
+    </div>
+
+    <!-- Download tab -->
+    <div id="download" class="tab-content">
+      <h2>Download MCQ Checker</h2>
+      <p>Get the latest version for Windows:</p>
+      <a href="https://github.com/mcqhelpdesk-coder/mcqhelpdesk-coder.github.io/releases/download/v1%2C0%2C0/MCQ.Checker.Setup.exe" class="download-btn">
+        <img src="Logo.ico" alt="MCQ Checker Logo">
+        Download MCQ Checker for Windows
+      </a>
     </div>
   </main>
 
